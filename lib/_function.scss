@@ -1,0 +1,12 @@
+// Tạo các thuộc tính cho các trình duyệt khác nhau 
+@mixin make-property($property, $value) {
+
+    @each $prefix in -webkit-,
+    -moz-,
+    -ms-,
+    -o-,
+    '' {
+        #{$prefix}#{$property}: $value;
+
+    }
+}

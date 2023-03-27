@@ -1,0 +1,43 @@
+@import 'responsive';
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// Column
+@for $col from 1 to 13 {
+    .col-#{$col} {
+        flex: 0 0 calc($col/12 * 100%);
+        max-width: calc($col/12 * 100%);  
+    }
+}
+
+@mixin setColumn($name) {
+    @for $col from 1 to 13 {
+        .col-#{$name}-#{$col} {
+            flex: 0 0 calc($col/12 * 100%) !important;
+            max-width: calc($col/12 * 100%) !important;
+        }
+    }
+}
+
+@media (min-width: $sm) {
+    @include setColumn(sm);
+}
+
+@media (min-width: $md) {
+    @include setColumn(md);
+}
+
+@media (min-width: $lg) {
+    @include setColumn(lg);
+}
+
+@media (min-width: $xl) {
+    @include setColumn(xl);
+}
+
+@media (min-width: $xxl) {
+    @include setColumn(xxl);
+}

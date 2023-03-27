@@ -1,0 +1,11 @@
+// Opacity
+@for $size from 1 to 21 {
+    // Phần thập phân
+    $residuals: $size % 10;
+    // Phần nguyên
+    $natural: calc(($size - $residuals) / 10);
+
+    .#{'transition-' + $natural + '\\.' '\\.' + $residuals} {
+        transition: all #{calc($size/10) + 's'};
+    }
+}

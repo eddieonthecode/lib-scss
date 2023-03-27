@@ -1,0 +1,96 @@
+$colors: 'primary', 'danger', 'secondary', 'success', 'white', 'link';
+
+// Màu text
+@each $i in $colors {
+    .text-#{$i} {
+        color: var(--app-color-#{$i}) !important;
+    }
+}
+
+// Transform
+.text-trans-none {
+    text-transform: none !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: Lowercase !important;
+}
+
+// Decoration
+.text-decore-none {
+    text-decoration: none !important;
+}
+
+.text-through {
+    text-decoration: Line-through !important;
+}
+
+.text-underline {
+    text-decoration: underline !important;
+}
+
+// Wrap
+.text-nowrap {
+    white-space: nowrap !important;
+}
+
+.text-wrap {
+    white-space: normal !important;
+}
+
+// Bold
+.text-bold {
+    font-weight: bold !important;
+}
+
+@for $size from 300 to 800 {
+    @if ($size % 50 == 0) {
+        .#{'text-bold-' + $size} {
+            font-weight: $size !important;
+        }
+    }
+}
+
+// Align
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+// Text ellipsis
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@for $line from 1 to 10 {
+    .#{'text-ellipsis-' + $line} {
+        display: -webkit-box;
+        -webkit-line-clamp: $line;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+// Font
+@for $size from 4 to 51 {
+    .#{'text-size-' + $size} {
+        font-size: $size + px !important;
+    }
+}

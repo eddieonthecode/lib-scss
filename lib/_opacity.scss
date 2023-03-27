@@ -1,0 +1,11 @@
+// Opacity
+@for $size from 1 to 11 {
+    // Phần thập phân
+    $residuals: $size % 10;
+    // Phần nguyên
+    $natural: calc(($size - $residuals) / 10);
+
+    .#{'op-' + $natural + '\\.' + $residuals} {
+        opacity: calc($size/10);
+    }
+}

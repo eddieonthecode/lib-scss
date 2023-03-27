@@ -1,0 +1,141 @@
+// Padding
+@for $i from 0 to 51 {
+    @if ($i <= 30 or ($i > 30 and $i % 2==0)) {
+
+        // All size
+        •#{'p-' + $i} {
+            padding: $i + px !important;
+        }
+
+        // Horizontal
+        .#{'p-x-' + $i} {
+            padding-left: $i + px !important;
+            padding-right: $i + px !important;
+        }
+
+        // Vertical
+        .#{'p-y-' + $i} {
+            padding-top: $i + px !important;
+            padding-bottom: $i + px !important;
+
+        }
+
+        // Left
+        .#{'p-l-' + $i} {
+            padding-left: $i + px !important;
+        }
+
+        // Right
+        •#{'p-r-' + $i} {
+            padding-right: $i + px !important;
+        }
+
+        // Top
+        .#{'p-t-' + $i} {
+            padding-top: $i + px !important;
+        }
+
+        // Bottom
+        .#{'p-b-' + $i} {
+            padding-bottom: $i + px !important;
+        }
+    }
+
+}
+
+// Margin
+@for $i from 0 to 51 {
+    @if ($i <=30 or ($i > 30 and $i % 2==0)) {
+
+        // All size
+        .#{ 'm-' + $i} {
+            margin: $i + px !important;
+        }
+
+        // Horizontal
+        .#{ 'm-x-' + $i} {
+            margin-left: $i + px !important;
+            margin-right: $i + px !important;
+        }
+
+        // Vertical
+        .#{'m-y-' + $i} {
+
+            margin-top: $i + px !important;
+            margin-bottom: $i + px !important;
+        }
+
+        // Left
+        .#{'m-l-' + $i} {
+            margin-left: $i + px !important;
+        }
+
+        // Right
+        .#{'m-r-' + $i} {
+            margin-right: $i + px !important;
+        }
+
+        // Top
+        .#{'m-t-' + $i} {
+            margin-top: $i + px !important;
+        }
+
+        // Bottom
+        .#{'m-b-' + $i} {
+            margin-bottom: $i + px !important;
+        }
+    }
+
+}
+
+
+@for $i from 0 to 5 {
+    .w-#{$i * 25} {
+        width: calc($i * 25%) !important;
+    }
+
+    .h-#{$i * 25} {
+        height: calc($i * 25%) !important;
+    }
+
+    .w-#{$i * 25} {
+        width: calc($i * 25vw) !important;
+    }
+
+    .h-#{$i * 25}v {
+        height: calc($i * 25vh) !important;
+    }
+
+}
+
+.w-auto {
+    width: auto;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.h-min-0 {
+    min-height: 0 !important;
+}
+
+.w-min-0 {
+    min-width: 0 !important;
+}
+
+.m-l-auto {
+    margin-left: auto;
+}
+
+.m-r-auto {
+    margin-right: auto;
+}
+
+// Icon
+@for $i from 8 to 101 {
+    .#{'mi-' + $i} {
+        width: $i + px !important;
+        height: $i + px !important;
+    }
+}

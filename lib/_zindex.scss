@@ -1,0 +1,15 @@
+@for $zindex from 0 to 10001 {
+    @if (($zindex <=50 and $zindex % 5==0) or ($zindex > 50 and $zindex % 100==0)) {
+        .#{'z-index-' + $zindex} {
+            z-index: $zindex !important;
+        }
+    }
+}
+
+.z-index-inherit {
+    z-index: inherit !important;
+}
+
+.z-index-max {
+    z-index: 2147483639;
+}

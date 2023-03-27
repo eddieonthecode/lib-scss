@@ -1,0 +1,33 @@
+// Scale
+@for $scale from 1 to 31 {
+    // Phần thập phân
+    $residuals: $scale % 10;
+    // Phần nguyên
+    $natural: calc(($scale - $residuals) / 10);
+
+    .#{'scale-' + $natural + '\\.' + $residuals} {
+        transform: scale(calc($scale/10)) !important;
+    }
+}
+
+
+// Translate
+@for $x from -101 to 101 {
+    @for $y from -101 to 101 {
+        @if ($x % 50==0 and $y % 50==0) {
+            // x, y là % 
+            .translate-x-#{$x}-y-#{$y} {
+                transform: translate(#{$x + '%'}, #{$y + '%'}) !important
+            }
+        }
+    }
+}
+
+// Rotate
+@for $deg from -181 to 181 {
+    @if ($deg % 45==0) {
+        .#{'rotate-' + $deg} {
+            transform: rotate($deg + deg) !important;
+        }
+    }
+}

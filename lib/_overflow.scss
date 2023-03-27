@@ -1,0 +1,8 @@
+// Overflow
+$overflows: 'auto', 'visible', 'hidden', 'scroll';
+
+@each $overflow in $overflows {
+    .overflow-#{$overflow} {
+        overflow: #{$overflow} !important;
+    }
+}

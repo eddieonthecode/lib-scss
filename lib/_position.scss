@@ -1,0 +1,75 @@
+// Position type 
+.p-absolute {
+    position: absolute !important;
+}
+
+.p-relative {
+    position: relative !important;
+}
+
+.p-fixed {
+    position: fixed !important;
+}
+
+.p-sticky {
+    position: sticky !important;
+}
+
+// Size
+@for $size from -101 to 101 {
+    @if ($size % 50==0) {
+        .#{'top-p-' + $size} {
+            top: #{$size + '%'} !important;
+        }
+
+        .#{'left-p-' + $size} {
+            left: #{$size + '%'} !important;
+        }
+
+        .#{'right-p-' + $size} {
+            right: #{$size + '%'} !important;
+        }
+
+        .#{'bottom-p-' + $size} {
+            bottom: #{$size + '%'} !important;
+        }
+    }
+
+    @if ($size >=-20 and $size <=20) {
+
+        .#{'top-' + $size} {
+            top: $size + px !important;
+        }
+
+        .#{'left-' + $size} {
+            left: $size + px !important;
+        }
+
+        .#{'right-' + $size} {
+
+            right: $size + px !important;
+        }
+
+
+        .#{'bottom-' + $size} {
+
+            bottom: $size + px !important;
+        }
+    }
+}
+
+.top-auto {
+    top: auto;
+}
+
+.bottom-auto {
+    bottom: auto;
+}
+
+.left-auto {
+    left: auto;
+}
+
+.right-auto {
+    right: auto;
+}

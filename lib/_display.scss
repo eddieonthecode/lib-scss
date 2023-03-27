@@ -1,0 +1,44 @@
+@import 'responsive';
+
+$styles: 'block', 'contents', 'flex', 'flexbox', 'flow-root', 'grid', 'inline', 'inline-block', 'inline-flex', 'inline-flexbox', 'inline-table', 'list-item', 'none', 'table';
+
+@each $style in $styles {
+    .d-#{$style} {
+        display: #{$style} !important;
+    }
+}
+
+@mixin setDisplay ($name) {
+    @each $style in $styles {
+        .d-#{$name}-#{$style} {
+            display: #{$style} !important;
+        }
+
+        @if ($name=='flex') {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+        }
+    }
+}
+
+@media (min-width: $sm) {
+    @include setDisplay(sm);
+}
+
+@media (min-width: $md) {
+    @include setDisplay (md);
+}
+
+@media (min-width: $lg) {
+    @include setDisplay (lg);
+}
+
+@media (min-width: $xl) {
+    @include setDisplay(xl);
+}
+
+@media (min-width: $xxl) {
+    @include setDisplay(xxl);
+}
